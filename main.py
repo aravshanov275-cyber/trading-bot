@@ -15,7 +15,6 @@ app = Flask(__name__)
 # ========================
 TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
-OPENAI_KEY = os.getenv("OPENAI_API_KEY")
 updates = requests.get(f"https://api.telegram.org/bot{TOKEN}/getUpdates").json()
 response = client.chat.completions.create(
     model="gpt-4o-mini",
@@ -25,6 +24,7 @@ response = client.chat.completions.create(
     model="gpt-4o-mini",
     messages=[{"role": "user", "content": message}]
 )
+OPENAI_KEY = os.getenv("OPENAI_API_KEY")
 openai.api_key = OPENAI_KEY
 
 def send_telegram(msg):
