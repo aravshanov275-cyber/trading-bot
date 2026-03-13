@@ -188,6 +188,10 @@ if __name__=="__main__":
             send_chart("chart.png", cap + "\n\nAI: " + ai_comment)
         time.sleep(60)
 
+@app.route("/")
+def home():
+    return "Trading bot ishlayapti"
+
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8080))
     app.run(host="0.0.0.0", port=port)
