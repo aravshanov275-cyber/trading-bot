@@ -187,3 +187,7 @@ if __name__=="__main__":
             ai_comment = ask_ai_forex("Bu signal haqida qisqacha tahlil ber", context=ai_context)
             send_chart("chart.png", cap + "\n\nAI: " + ai_comment)
         time.sleep(60)
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8080))
+    app.run(host="0.0.0.0", port=port)
