@@ -1,6 +1,0 @@
-requests
-pandas
-numpy
-matplotlib
-flask
-openai
