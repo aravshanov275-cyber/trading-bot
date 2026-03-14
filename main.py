@@ -63,7 +63,9 @@ def check_news():
         r = requests.get(NEWS_URL).json()
     except:
         return
-    now = datetime.utcnow()
+    now = from datetime import datetime, UTC
+
+datetime.now(UTC)
     for n in r:
         if n.get("impact")!="High":
             continue
