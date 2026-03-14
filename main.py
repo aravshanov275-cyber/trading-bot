@@ -63,7 +63,7 @@ def check_news():
         r = requests.get(NEWS_URL).json()
     except:
         return
-    now = from datetime import datetime, UTC
+    from datetime import datetime, UTC
 
 datetime.now(UTC)
     for n in r:
