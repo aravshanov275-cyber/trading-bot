@@ -70,7 +70,7 @@ def check_news():
         title = n.get("title") 
         d = n.get("date")
         t = n.get("time","00:00")
-        event = datetime.strptime(f"{d} {t}","%Y-%m-%d %H:%M")
+        event = datetime.fromisoformat(f"{d}T{t}")
         key_base = f"{title}-{d}-{t}"
         before = event - timedelta(minutes=30)
         after = event + timedelta(minutes=30)
