@@ -195,3 +195,26 @@ def home():
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8080))
     app.run(host="0.0.0.0", port=port)
+
+import requests
+import time
+
+last_update = 0
+
+while True:
+
+    url = f"https://api.telegram.org/bot{TOKEN}/getUpdates"
+    data = requests.get(url).json()
+
+    for update in data["result"]:
+
+        update_id = update["update_id"]
+
+        if update_id > last_update:
+
+            if "message" in update:
+
+                text = update["message"]["text"]
+                chat_id = update["message"]["chat"]["id"]
+
+                reply
